@@ -9,6 +9,11 @@ steps:
 
 - script: pwd
 
+- task: DownloadSecureFile@1
+  name: mavenSettings
+  inputs:
+    secureFile: 'settings.xml'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -36,7 +41,7 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'release:prepare'
-    options: '--batch-mode'
+    options: '--batch-mode -s $(mavenSettings.secureFilePath)'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
