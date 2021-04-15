@@ -8,6 +8,9 @@ steps:
 - script: printenv
 
 - script: pwd
+- script: git config --global user.email "nelson.mig.l@gmail.com"
+- script: git config --global user.name "Dev Ops"
+
 
 - task: DownloadSecureFile@1
   name: mavenSettings
