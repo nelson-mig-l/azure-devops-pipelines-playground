@@ -32,6 +32,19 @@ steps:
 #     effectivePomSkip: false
 #     sonarQubeRunAnalysis: false
 
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'release:prepare'
+    options: '--batch-mode'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.Repository.LocalPath)'
