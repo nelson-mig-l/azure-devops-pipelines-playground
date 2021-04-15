@@ -28,5 +28,9 @@
         </repository>
     </distributionManagement>
 
+    <scm>
+        <developerConnection>scm:git:git://github.com/nelson-mig-l/azure-devops-pipelines-playground.git</developerConnection>
+    </scm>
+
 
 </project>
